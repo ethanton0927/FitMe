@@ -8,8 +8,8 @@ In the project directory, you can run:
 
 ### `npm install`
 
-Runs the installer for the application
-After which npm start can be executed in terminal
+Runs the installer for the application.\
+After which npm start can be executed in a terminal.
 
 ### `npm start`
 
