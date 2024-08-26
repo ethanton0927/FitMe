@@ -5,9 +5,10 @@ import './styles/exercises.css'
 import { useExerciseDiary } from '../contexts/ExerciseDiaryContext'
 
 const Exercises = () => {
+    // State to store the list of exercises
     const [exercises, setExercises] = useState([])
     const { addExercise } = useExerciseDiary()
-
+    // useEffect hook to fetch and parse the CSV file with the list of exercises
     useEffect(() => {
         Papa.parse(`${process.env.PUBLIC_URL}/exercises.csv`, {
             download: true,

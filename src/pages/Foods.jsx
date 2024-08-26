@@ -5,9 +5,10 @@ import './styles/foods.css'
 import { useFoodDiary } from '../contexts/FoodDiaryContext'
 
 const Foods = () => {
+    // State to store the list of foods
     const [foods, setFoods] = useState([])
     const { addFood } = useFoodDiary()
-
+    // useEffect hook to fetch and parse the CSV file with the list of foods
     useEffect(() => {
         Papa.parse(`${process.env.PUBLIC_URL}/foods.csv`, {
             download: true,

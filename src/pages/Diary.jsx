@@ -7,22 +7,23 @@ import { TiDelete } from "react-icons/ti"
 import { useNavigate } from 'react-router-dom'
 
 const Diary = () => {
+    // Use context to get foods eaten and exercises done with functions
     const { foodsEaten, removeFood } = useFoodDiary()
     const { exercisesDone, removeExercise } = useExerciseDiary()
     const navigate = useNavigate()
-
+    // Calculate total calories from foods eaten
     const totalCalories = foodsEaten.reduce((acc, food) => acc + Number(food.calories), 0)
     const totalCarbs = foodsEaten.reduce((acc, food) => acc + Number(food.carbs), 0).toFixed(1)
     const totalFats = foodsEaten.reduce((acc, food) => acc + Number(food.fat), 0).toFixed(1)
     const totalProteins = foodsEaten.reduce((acc, food) => acc + Number(food.protein), 0).toFixed(1)
-
+    // Calculate total calories from exercises done
     const totalCaloriesBurned = exercisesDone.reduce((acc, exercise) => acc + Number(exercise.calories), 0)
-
+    
     const handleAddFoodClick = () => {
         navigate('/foods');  // Navigate to the Foods page
     }
     const handleAddExerciseClick = () => {
-        navigate('/exercises');
+        navigate('/exercises'); // Navigate to the Exercises page
     }
 
     return (

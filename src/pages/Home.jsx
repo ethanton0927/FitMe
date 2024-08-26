@@ -8,6 +8,7 @@ import weightHistory from '../data/weightData'
 
 const Dashboard = () => {
     const navigate = useNavigate();
+    // State to store user's stats
     const [stats, setStats] = useState({
         age: 0,
         height: '0\' 0"',
@@ -20,7 +21,7 @@ const Dashboard = () => {
         leanMass: 0,
         fatMass: 0
     });
-
+    // useEffect hook to load user stats from local storage
     useEffect(() => {
         const loadedStats = localStorage.getItem('userStats');
         if (loadedStats) {
@@ -29,8 +30,8 @@ const Dashboard = () => {
                 age: data.age || 0,
                 height: data.height || '0\' 0"',
                 weight: data.weight || 0,
-                neck: data.neckCircumference || 0, // Correct key
-                waist: data.waistCircumference || 0, // Correct key
+                neck: data.neckCircumference || 0,
+                waist: data.waistCircumference || 0,
                 bodyFat: data.bodyFat || 0,
                 idealWeight: data.idealWeight || 0,
                 goalFat: data.goalFat || 0,
@@ -39,7 +40,7 @@ const Dashboard = () => {
             });
         }
     }, []);
-
+    // Navigates to Log Stats page
     const handleUpdateClick = () => {
         navigate('/log-stats');
     };
@@ -53,11 +54,11 @@ const Dashboard = () => {
                 data: weightHistory.map(data => data.weight),
                 fill: false,
                 borderColor: 'rgb(75, 192, 192)',
-                tension: 0.1
+                tension: 0.1    // Smoothness of the chart line
             }
         ]
     };
-
+    // Chart options to customize char appearance
     const chartOptions = {
         scales: {
             x: {

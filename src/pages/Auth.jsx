@@ -12,7 +12,7 @@ const Auth = () => {
     const handleTabSwitch = (tab) => {
         setActiveTab(tab);
     };
-
+    
     const handleSignUp = (event) => {
         event.preventDefault();
         const formData = new FormData(event.target);

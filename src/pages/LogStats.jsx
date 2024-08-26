@@ -45,7 +45,7 @@ function LogStats() {
         navigate('/');
     };
 
-    // Function to calculate metrics
+    // Functions to calculate metrics
     function totalHeightInInches(heightFt, heightIn) {
         return parseInt(heightFt) * 12 + parseInt(heightIn);
     }

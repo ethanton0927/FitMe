@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState } from 'react'
 
 const UserContext = createContext(null)
-
+// Provider component
 export const UserProvider = ({ children }) => {
     const [user, setUser] = useState(null)
 

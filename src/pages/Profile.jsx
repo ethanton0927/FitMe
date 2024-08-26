@@ -12,12 +12,12 @@ const Profile = () => {
     const navigate = useNavigate();
     const [profilePic, setProfilePic] = useState(user ? user.imageUrl : 'default_profile.png');
     const fileInputRef = useRef(null)
-
+    // Handle user logout
     const handleLogout = () => {
         setUser(null); // Clear user in context
         navigate('/auth');
     };
-
+    // Handle profile picture change
     const handleImageChange = (e) => {
         const file = e.target.files[0];
         const reader = new FileReader();
@@ -29,9 +29,9 @@ const Profile = () => {
             reader.readAsDataURL(file);
         }
     };
-
+    // handle click on profile picture to trigger hidden file input
     const handleClick = () => {
-        fileInputRef.current.click(); // Trigger the hidden file input click
+        fileInputRef.current.click();
     };
 
     return (

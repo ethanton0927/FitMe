@@ -1,3 +1,4 @@
+// Weight data that will show up on Home Page as a chart
 const weightHistory = [
     { date: '2023-04-01', weight: 200.0 },
     { date: '2023-04-03', weight: 199.0 },
